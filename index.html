@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffdde1,#f6d365,#fda085);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+text-align:center;
+width:90%;
+max-width:420px;
+color:white;
+box-shadow:0 0 25px rgba(255,255,255,.3);
+}
+
+h1{
+font-size:34px;
+margin-bottom:15px;
+}
+
+p{
+font-size:20px;
+line-height:1.7;
+}
+
+button{
+margin-top:25px;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#ff4081;
+font-weight:bold;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="box">
+
+<h1>🎉 Happy Birthday 🎂</h1>
+
+<p>
+To the most beautiful girl ❤️<br><br>
+
+May Allah always keep you smiling 😊<br><br>
+
+May every dream of yours come true 🌹<br><br>
+
+Stay happy forever 💖
+</p>
+
+<button onclick="surprise()">🎁 Open Surprise</button>
+
+</div>
+
+<script>
+
+function surprise(){
+
+document.getElementById("box").innerHTML=`
+
+<h1>👑 Happy Birthday Princess 👑</h1>
+
+<p>
+
+You are truly special ❤️<br><br>
+
+May your life always be filled with happiness, love and success ✨<br><br>
+
+Keep smiling forever 💕
+
+</p>
+
+<h2 style="margin-top:20px;">
+❤️ From Adii ❤️
+</h2>
+
+`;
+
+}
+
+function hearts(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["❤️","💕","💖","💗","🌸"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+}
+
+setInterval(hearts,300);
+
+</script>
+
+</body>
+</html>
